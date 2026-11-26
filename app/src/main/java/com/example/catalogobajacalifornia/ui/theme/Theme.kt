@@ -1,6 +1,5 @@
 package com.example.catalogobajacalifornia.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -11,33 +10,44 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val EsquemaOscuro = darkColorScheme(
+    primary = VerdePrimarioOscuro,
+    onPrimary = SobreVerdePrimarioOscuro,
+    primaryContainer = ContenedorPrimarioOscuro,
+    onPrimaryContainer = SobreContenedorPrimarioOscuro,
+    secondary = VerdeSecundarioOscuro,
+    onSecondary = SobreVerdeSecundarioOscuro,
+    secondaryContainer = ContenedorSecundarioOscuro,
+    onSecondaryContainer = SobreContenedorSecundarioOscuro,
+    background = FondoOscuro,
+    onBackground = TextoClaro,
+    surface = SuperficieOscura,
+    onSurface = TextoClaro,
+    surfaceVariant = SuperficieVarianteOscura,
+    onSurfaceVariant = TextoSecundarioOscuro
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val EsquemaClaro = lightColorScheme(
+    primary = VerdePrimarioClaro,
+    onPrimary = SobreVerdePrimarioClaro,
+    primaryContainer = ContenedorPrimarioClaro,
+    onPrimaryContainer = SobreContenedorPrimarioClaro,
+    secondary = VerdeSecundarioClaro,
+    onSecondary = SobreVerdeSecundarioClaro,
+    secondaryContainer = ContenedorSecundarioClaro,
+    onSecondaryContainer = SobreContenedorSecundarioClaro,
+    background = FondoClaro,
+    onBackground = TextoOscuro,
+    surface = SuperficieClara,
+    onSurface = TextoOscuro,
+    surfaceVariant = SuperficieVarianteClara,
+    onSurfaceVariant = TextoSecundarioClaro
 )
 
 @Composable
 fun CatalogoBajaCaliforniaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -46,8 +56,8 @@ fun CatalogoBajaCaliforniaTheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> EsquemaOscuro
+        else -> EsquemaClaro
     }
 
     MaterialTheme(

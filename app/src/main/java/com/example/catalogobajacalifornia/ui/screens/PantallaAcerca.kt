@@ -19,9 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.catalogobajacalifornia.ui.theme.CatalogoBajaCaliforniaTheme
 
-/**
- * Pantalla informativa con el propósito, contenido, autor y datos académicos de la aplicación.
- */
 @Composable
 fun PantallaAcerca(
     modifier: Modifier = Modifier
